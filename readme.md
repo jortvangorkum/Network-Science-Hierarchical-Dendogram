@@ -5,11 +5,11 @@ The easiest way to use this project is to install `pipenv`.
 ```
 pip install pipenv
 ```
-When `pipenv` is installed run:
+When `pipenv` is installed, run:
 ```
 pipenv install
 ```
-It will install all dependencies needed for this project. When all the dependencies are installed run:
+It will install all dependencies needed for this project. When all the dependencies are installed, run:
 ```bash
 pipenv shell #Starts the virtual environment where the dependencies are installed and the Python version is specified
 python main.py
