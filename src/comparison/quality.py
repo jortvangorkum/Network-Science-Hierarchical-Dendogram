@@ -15,7 +15,11 @@ def calculate_fscore(true_labels, pred_labels):
     return f1
 
 def calculate_silhouette_score(adj_matrix, pred_labels):
-    return silhouette_score(adj_matrix, pred_labels)
+    try:
+        return silhouette_score(adj_matrix, pred_labels)
+    except:
+        return None  
+
 
 def calculate_adjust_rand_score(true_labels, pred_labels):
     return adjusted_rand_score(true_labels, pred_labels)

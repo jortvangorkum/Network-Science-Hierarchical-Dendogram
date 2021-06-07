@@ -11,6 +11,7 @@ sklearn = "*"
 networkx = "*"
 pandas = "*"
 dgl = "*"
+memory-profiler = "*"
 
 [dev-packages]
 
