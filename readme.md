@@ -1,7 +1,7 @@
 ### How to install
 The easiest way to use this project is to install `pipenv`.
 
-`pipenv` is a package manager for `pip` so you do not have to manage dependencies. To install `pipenv` run:
+`pipenv` is a package manager for `pip` so you do not have to manage the dependencies. To install `pipenv` run:
 ```
 pip install pipenv
 ```
