@@ -9,7 +9,7 @@ When `pipenv` is installed, run:
 ```
 pipenv install
 ```
-It will install all dependencies needed for this project. When all the dependencies are installed, run:
+It will install all dependencies needed for this project. When all the dependencies are installed. You need to extract the "download.tsv.dolphins.tar.bz2". Then run:
 ```bash
 pipenv shell #Starts the virtual environment where the dependencies are installed and the Python version is specified
 python main.py
