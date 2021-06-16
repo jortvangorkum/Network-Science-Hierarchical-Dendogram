@@ -3,6 +3,10 @@ from itertools import chain, combinations
 import matplotlib.pyplot as plt
 from scipy.cluster.hierarchy import dendrogram
 
+def scipy_to_dendrogram(Z):
+    dendrogram(Z, count_sort=True, leaf_font_size=11)
+    plt.show()
+
 # Code by: https://stackoverflow.com/questions/59821151/plot-the-dendrogram-of-communities-found-by-networkx-girvan-newman-algorithm
 def networkx_to_dendrogram(G, communities):
     # building initial dict of node_id to each possible subset:
@@ -85,4 +89,5 @@ def networkx_to_dendrogram(G, communities):
             x = z
             k += 1
 
-    return dendrogram(Z, labels=[node_labels[node_id] for node_id in leaves])
+    dendrogram(Z, count_sort=True, leaf_font_size=11, labels=[node_labels[node_id] for node_id in leaves])
+    plt.show() 

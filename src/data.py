@@ -5,7 +5,7 @@ from scipy.cluster.hierarchy import linkage
 
 # Create data
 def get_data_from_path(filePath, delimiter, labelPath = None):
-    G = nx.read_edgelist(f"./datasets/{filePath}", delimiter=delimiter, create_using=nx.Graph())
+    G = nx.read_edgelist(f"./datasets/{filePath}", delimiter=delimiter, comments="%", create_using=nx.Graph())
     A = adjacency_matrix(G).todense()
     if labelPath is not None:
         L = np.loadtxt(f"./datasets/{labelPath}", dtype=int, delimiter=delimiter, skiprows=1)
