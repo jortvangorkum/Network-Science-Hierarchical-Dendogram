@@ -11,6 +11,7 @@ sklearn = "*"
 networkx = "*"
 memory-profiler = "*"
 pandas = "*"
+statsmodels = "*"
 
 [dev-packages]
 

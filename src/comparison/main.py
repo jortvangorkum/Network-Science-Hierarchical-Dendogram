@@ -1,13 +1,20 @@
-import numpy as np
-from scipy.cluster.hierarchy import fcluster
 from .memory_usage import determine_memory_usage
-from .quality import calculate_calinksi_harabsz_score, calculate_quality_measures, calculate_silhouette_score, calculate_adjust_rand_score  
+from .quality import calculate_quality_measures
 from .running_time import determine_running_time
 from ..algorithms.ravasz import get_labels_ravasz
 from ..algorithms.girvan_newman import convert_clusters_to_labels
 
 def determine_measures(graph, adj_matrix, alg, alg_name):
-    ((res, duration), mem_usage) = determine_memory_usage(lambda: determine_running_time(alg))
+    durations =  []
+    mem_usages = []
+
+    res = alg()
+
+    for _ in range(100):
+        ((_, duration), mem_usage) = determine_memory_usage(lambda: determine_running_time(alg))
+        durations.append(duration.total_seconds() * 1000)
+        mem_usages.append(mem_usage * 1.048576)
+
 
     sil_scores     = []
     cal_har_scores = []
@@ -21,8 +28,8 @@ def determine_measures(graph, adj_matrix, alg, alg_name):
 
     elif alg_name == "Girvan-Newman":
         n = len(graph.nodes)
-        for clusters in res:
+        for clusters in res[:-1]:
             pred_labels = convert_clusters_to_labels(clusters, n)
             calculate_quality_measures(adj_matrix, pred_labels, len(clusters), clusters_sizes, sil_scores, cal_har_scores, dav_bou_scores)
 
-    return (res, mem_usage, duration, clusters_sizes, sil_scores, cal_har_scores, dav_bou_scores)
+    return (res, mem_usages, durations, clusters_sizes, sil_scores, cal_har_scores, dav_bou_scores)

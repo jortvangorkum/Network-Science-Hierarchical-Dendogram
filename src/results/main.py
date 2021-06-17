@@ -1,11 +1,12 @@
 import matplotlib.pyplot as plt
+import numpy as np
 
-def print_information(mem_usage, duration, sil_scores, cal_har_scores, dav_bou_scores):
-    print(f"Memory Usage: {mem_usage * 1.048576}MB")
-    print(f"Execution Algorithm: {duration.total_seconds()}s")
-    print(f"Best Silhouette Score: {max(sil_scores)}")
-    print(f"Best Calinksi-Harabasz Index: {max(cal_har_scores)}")
-    print(f"Best Davies-Bouldin Index: {min(dav_bou_scores)}")
+def print_information(mem_usages, durations, sil_scores, cal_har_scores, dav_bou_scores):
+    print(f"Average Memory Usage: {np.mean(mem_usages)}MB")
+    print(f"Average Execution Algorithm: {np.mean(durations)}ms")
+    print(f"Average Silhouette Score: {np.mean(sil_scores)}")
+    print(f"Average Calinksi-Harabasz Index: {np.mean(cal_har_scores)}")
+    print(f"Average Davies-Bouldin Index: {np.mean(dav_bou_scores)}")
 
 def graph_quality_measures(clusters_sizes, sil_scores, cal_har_scores, dav_bou_scores):
     x = clusters_sizes
@@ -17,3 +18,9 @@ def graph_quality_measures(clusters_sizes, sil_scores, cal_har_scores, dav_bou_s
     ax3.bar(x, dav_bou_scores)
     ax3.title.set_text("Davies-Bouldin Index")
     plt.show()
+
+def print_hypothesis_testing(p_value):
+    if (p_value > 0.05):
+        print(f"Samples are uncorrelated (fail to reject H0) p={p_value}")
+    else:
+        print(f"Samples are correlated (reject H0) p={p_value}")
