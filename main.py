@@ -32,26 +32,26 @@ def execute_algorithms_on_files():
         print_graph_information(name, girvan_newman[0])
         print_graph_information(name, girvan_newman[1])
 
-        # print(f"Mem Usage test")
-        # (p_value, _, _) = tost_test(ravasz[0], girvan_newman[0], 0.01)
-        # print_hypothesis_testing(p_value)
+        print(f"Mem Usage test")
+        (p_value, _, _) = tost_test(ravasz[0], girvan_newman[0], 0.01)
+        print_hypothesis_testing(p_value)
 
-        # print(f"Duration test")
-        # (p_value, _, _) = tost_test(ravasz[1], girvan_newman[1], 100)
-        # print_hypothesis_testing(p_value)
+        print(f"Duration test")
+        (p_value, _, _) = tost_test(ravasz[1], girvan_newman[1], 100)
+        print_hypothesis_testing(p_value)
 
-        # print(f"Silhouette Coefficient test")
-        # (p_value, _, _) = tost_test(ravasz[2], girvan_newman[2], 0.01)
-        # print_hypothesis_testing(p_value)
+        print(f"Silhouette Coefficient test")
+        (p_value, _, _) = tost_test(ravasz[2], girvan_newman[2], 0.01)
+        print_hypothesis_testing(p_value)
 
-        # print(f"Calinksi-Harabasz Index test")
-        # (p_value, _, _) = tost_test(ravasz[2], girvan_newman[2], 0.1)
-        # print_hypothesis_testing(p_value)
+        print(f"Calinksi-Harabasz Index test")
+        (p_value, _, _) = tost_test(ravasz[2], girvan_newman[2], 0.1)
+        print_hypothesis_testing(p_value)
 
 
-        # print(f"Davies-Bouldin Index")
-        # (p_value, _, _) = tost_test(ravasz[2], girvan_newman[2], 0.1)
-        # print_hypothesis_testing(p_value)
+        print(f"Davies-Bouldin Index")
+        (p_value, _, _) = tost_test(ravasz[2], girvan_newman[2], 0.1)
+        print_hypothesis_testing(p_value)
 
 
 
