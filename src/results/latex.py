@@ -9,7 +9,6 @@ def generate_latex_table(clusters_sizes, values, values_name):
     print(f"\n{df_values.to_latex(index=False)}\n")
 
 def generate_latex_information(dataset_name, ravasz_values, girvan_newman_values):
-    # (mem_usages, durations, sil_scores, cal_har_scores, dav_bou_scores)
     d = {
         'Dataset': dataset_name,
         'Algorithm': ['Ravasz', 'Girvan Newman'],

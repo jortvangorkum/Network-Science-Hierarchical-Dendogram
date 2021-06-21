@@ -15,11 +15,8 @@ def execute_ravasz_algorithm(file_path, delimiter):
 
     print("Ravasz:")
     print_information(mem_usages, durations, sil_scores, cal_har_scores, dav_bou_scores)
-    # graph_quality_measures(clusters_sizes, sil_scores, cal_har_scores, dav_bou_scores)
-    # scipy_to_dendrogram(Z)
-    # generate_latex_table(sil_scores, 'Silhouette Coefficient')
-    # generate_latex_table(cal_har_scores, 'Calinksi-Harabasz Index')
-    # generate_latex_table(sil_scores, 'Davies-Bouldin Index')
+    graph_quality_measures(clusters_sizes, sil_scores, cal_har_scores, dav_bou_scores)
+    scipy_to_dendrogram(Z)
 
     return (mem_usages, durations, sil_scores, cal_har_scores, dav_bou_scores)
     
@@ -30,11 +27,8 @@ def execute_girvan_newman_algorithm(file_path, delimiter):
 
     print("\nGirvan-Newman:")
     print_information(mem_usages, durations, sil_scores, cal_har_scores, dav_bou_scores)
-    # graph_quality_measures(clusters_sizes, sil_scores, cal_har_scores, dav_bou_scores)
-    # networkx_to_dendrogram(G, clusters)
-    # generate_latex_table(sil_scores, 'Silhouette Coefficient')
-    # generate_latex_table(cal_har_scores, 'Calinksi-Harabasz Index')
-    # generate_latex_table(sil_scores, 'Davies-Bouldin Index')
+    graph_quality_measures(clusters_sizes, sil_scores, cal_har_scores, dav_bou_scores)
+    networkx_to_dendrogram(G, clusters)
 
     return (mem_usages, durations, sil_scores, cal_har_scores, dav_bou_scores)
 

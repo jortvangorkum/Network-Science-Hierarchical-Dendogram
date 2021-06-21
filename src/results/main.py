@@ -1,6 +1,12 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
+def print_graph_information(name, values):
+    avg_mem_usage = np.mean(values)
+    min_mem_usage = np.min(values)
+    max_mem_usage = np.max(values)
+    print(f"{{{name}}} {avg_mem_usage} {max_mem_usage} {min_mem_usage}")
+
 def print_information(mem_usages, durations, sil_scores, cal_har_scores, dav_bou_scores):
     print(f"Average Memory Usage: {np.mean(mem_usages)}MB")
     print(f"Average Execution Algorithm: {np.mean(durations)}ms")
